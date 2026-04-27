@@ -181,7 +181,7 @@ void modifyRecord()
     fclose(fp);
 }
 
-// Delete (Logical)
+// Delete
 void deleteRecord()
 {
     struct Student s;
@@ -205,7 +205,7 @@ void deleteRecord()
         {
             found = 1;
 
-            s.id = -1; // mark as deleted
+            s.id = -1;
 
             fseek(fp, -sizeof(s), SEEK_CUR);
             fwrite(&s, sizeof(s), 1, fp);
